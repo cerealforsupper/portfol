@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Capstone</title>
+  <style>
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    a {
+      color: #e63946;
+      text-decoration: none;
+      margin-top: 2rem;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .image {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    h1, h2 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 1rem;
+    }
+
+    .portrait {
+      max-height: 400px;
+      width: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #e63946, #ffffff10, #e63946);
+      margin: 3rem auto;
+      width: 80%;
+      opacity: 0.6;
+      border-radius: 2px;
+    }
+
+    /* Scroll animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <a href="projects.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <h1 class="scroll-reveal">Capstone Project</h1>
+
+  <p class="scroll-reveal">As part of my capstone project, I have been tasked with developing an algae-based purification system for a carbon-capturing machine from Nitto.</p>
+  <p class="scroll-reveal">This will be done with the help of mentors from Nitto and GWS Vidacity.</p>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-06-19 at 11.52.51 AM.png" alt="Prototype sketch" class="image" />
+    <figcaption>A draft sketch of our prototype</figcaption>
+    <p>The current idea is to have a rotating system that constantly drenches algae in carbonated water (carbon from the Nitto Machine) to eventually grow it and use it as an air purification unit. This will contribute to sustainability efforts in reducing energy consumption in mechanical air purification systems.</p>
+    <p>The project is still in its early stages and more will be updated as it progresses. I am more than thrilled to complete this fulfilling project in the near future.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <a href="projects.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <script>
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

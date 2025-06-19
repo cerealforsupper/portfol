@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | IDC</title>
+  <style>
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    a {
+      color: #e63946;
+      text-decoration: none;
+      margin-top: 2rem;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .image {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    h1, h2 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 1rem;
+    }
+
+    .portrait {
+      max-height: 400px;
+      width: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #e63946, #ffffff10, #e63946);
+      margin: 3rem auto;
+      width: 80%;
+      opacity: 0.6;
+      border-radius: 2px;
+    }
+
+    /* Scroll animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <a href="projects.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <h1 class="scroll-reveal">Integrated Design Challenge (IDC)</h1>
+
+  <p class="scroll-reveal">This was a project where my team and I were tasked to design and build a robot system that could support disaster relief operations in post-disaster situations. The bot used systems like Arduino and Raspberry Pi to carry out the tasks.</p>
+  
+  <p class="scroll-reveal">The bot was to traverse a playfield and collect objects from it, and return it to the collection zone.</p>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-06-19 at 11.24.28 AM.png" alt="Playfield photo" class="image" />
+    <figcaption>The playfield and collection items</figcaption>
+  </section>
+
+  <hr class="divider" />
+
+  <h2 class="scroll-reveal">The Bot</h2>
+
+  <section class="section active scroll-reveal">
+    <p>The bot was made with a claw collection system, a computer vision trained model (Raspberry Pi and Camera), Bluetooth remote connection subsystem, and a line tracing feature.</p>
+  </section>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-06-19 at 11.33.58 AM.png" alt="Bot features" class="image" />
+    <figcaption>Bot features</figcaption>
+  </section>
+
+  <hr class="divider" />
+
+  <h2 class="scroll-reveal">More</h2>
+
+  <section class="section active scroll-reveal">
+    <p>I had also written a very detailed report for the project and made a poster for my team regarding our bot.</p>
+  </section>
+
+  <a class="scroll-reveal" href="https://docs.google.com/document/d/1rCKdKEDKF85yndKURoyrVh9mh3RqPtilqwoewX1w91g/edit?usp=sharing" target="_blank">Report Link</a>
+
+  <a class="scroll-reveal" href="https://www.canva.com/design/DAGoDCgkQAo/p0obNteUgtBe03bh_PwQXw/edit?utm_content=DAGoDCgkQAo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Poster Link</a>
+
+  <hr class="divider" />
+
+  <a href="projects.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <script>
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

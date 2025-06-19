@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experiences | Science Fairs</title>
+  <style>
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    a {
+      color: #e63946;
+      text-decoration: none;
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+
+    .image {
+      width: 500px;
+      height: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    h1, h2 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    p {
+      max-width: 700px;
+      margin-bottom: 1rem;
+    }
+
+    .divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #e63946, #ffffff10, #e63946);
+      margin: 3rem auto;
+      width: 80%;
+      opacity: 0.6;
+      border-radius: 2px;
+    }
+
+    /* Scroll animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <h1 class="scroll-reveal">Science Fairs and Events</h1>
+
+  <p class="scroll-reveal">
+    My team and I participated in several science events with our Peltier Cell ISS project 
+    (more details can be found on the Projects page). These included the 
+    <strong>Opportunity X Science Fair</strong> and the <strong>Singapore Science & Engineering Fair (SSEF)</strong>, 
+    where we presented our findings and project outcomes.
+  </p>
+
+  <p class="scroll-reveal">
+    🔗 Learn more about the project here: 
+    <a href="project6.html">Project Link</a>
+  </p>
+
+  <hr class="divider scroll-reveal"/>
+
+  <a href="achievements.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <script>
+    const elements = document.querySelectorAll('.scroll-reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

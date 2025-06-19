@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joen Foo | Experiences</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Scroll animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Card hover effect */
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Button styling */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background-color: #2c2c2c;
+      color: #f0f0f0;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #3a3a3a;
+      transform: translateY(-2px);
+    }
+
+    .btn-icon {
+      width: 16px;
+      height: 16px;
+      filter: invert(100%);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="experiences.html" class="active">Experiences</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section active">
+    <h2>Experiences & Leadership</h2>
+    <div class="cards-container">
+      <div class="card scroll-reveal">
+        <img src="photos/Screenshot 2025-05-24 at 1.26.07 AM.png" alt="spin" height="180px"/>
+        <h3>SWARP</h3>
+        <p>Work attachment program @ STMicroelectronics</p>
+        <div class="tags">
+          <span class="tag">2024</span>
+          <span class="tag">Electronics</span>
+          <span class="tag">Work attachment</span>
+        </div>
+        <a href="experience1.html" class="btn">
+          View More
+          <img src="photos/bxs-binoculars.svg" alt="binoculars" class="btn-icon" />
+        </a>
+      </div>
+
+      <div class="card scroll-reveal">
+        <img src="photos/Screenshot 2025-06-19 at 10.14.09 AM.png" alt="spin" height="180px" \/>
+        <h3>Jakarta Trip</h3>
+        <p>Overseas student exchange program</p>
+        <div class="tags">
+          <span class="tag">2024</span>
+          <span class="tag">OLE</span>
+        </div>
+        <a href="experience2.html" class="btn">
+          View More
+          <img src="photos/bxs-binoculars.svg" alt="binoculars" class="btn-icon" />
+        </a>
+      </div>
+
+      <div class="card scroll-reveal">
+        <img src="photos/IMG_2816.jpg" alt="spin" />
+        <h3>Scouts Leadership</h3>
+        <p>Assitalt Patrol Leader, Patrol Leader, & Patrol Advisor</p>
+        <div class="tags">
+            <span class="tag">2023-5</span>
+            <span class="tag">Leadership</span>
+            <span class="tag">CCA</span>
+        </div>
+        <a href="experience3.html" class="btn">
+          View More
+          <img src="photos/bxs-binoculars.svg" alt="binoculars" class="btn-icon" />
+        </a>
+      </div>
+
+      <div class="card scroll-reveal">
+        <img src="photos/IMG_2817.jpg" alt="spin" />
+        <h3>Band Performance</h3>
+        <p>Band music performance during school's CNY celebration</p>
+        <div class="tags">
+            <span class="tag">2025</span>
+            <span class="tag">Stage Performance</span>
+        </div>
+        <a href="experience4.html" class="btn">
+          View More
+          <img src="photos/bxs-binoculars.svg" alt="binoculars" class="btn-icon" />
+        </a>
+      </div>
+
+      <div class="card scroll-reveal">
+        <img src="photos/IMG_59306B76DB6E-1.jpeg" alt="spin" />
+        <h3>Class Leadership</h3>
+        <p>Class Vice ChairPerson</p>
+        <div class="tags">
+            <span class="tag">2025</span>
+            <span class="tag">Leadership</span>
+            <span class="tag">Class</span>
+        </div>
+        <a href="experience5.html" class="btn">
+          View More
+          <img src="photos/bxs-binoculars.svg" alt="binoculars" class="btn-icon" />
+        </a>
+      </div>
+
+      <div class="card scroll-reveal">
+        <img src="photos/IMG_6EFC3CD57E36-1.jpeg" alt="spin" />
+        <h3>House Leadership</h3>
+        <p>House Comitee Representative</p>
+        <div class="tags">
+          <span class="tag">2024</span>
+          <span class="tag">Leadership</span>
+          <span class="tag">House</span>
+        </div>
+        <a href="experience6.html" class="btn">
+          View More
+          <img src="photos/bxs-binoculars.svg" alt="binoculars" class="btn-icon" />
+        </a>
+      </div>
+    </div>
+  </section>
+  <script>
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experiences | SWRAP</title>
+  <style>
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    a {
+      color: #e63946;
+      text-decoration: none;
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+
+    .image {
+      width: 500px;
+      height: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    h1, h2 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    p {
+      max-width: 700px;
+    }
+
+    .portrait {
+      max-height: 400px;
+      width: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #e63946, #ffffff10, #e63946);
+      margin: 3rem auto;
+      width: 80%;
+      opacity: 0.6;
+      border-radius: 2px;
+    }
+
+    /* Scroll reveal animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <a href="experiences.html" class="scroll-reveal">← Back to Portfolio</a>
+  <h1 class="scroll-reveal">SWRAP @ STMicroelectronics</h1>
+  <p class="scroll-reveal">I had the opportunity to go for a 4 day work attachment program at STMicroelectronic's AMK plant to learn more about the production and manufacturing of semiconductors. This was done through the SWRAP program (Structured Work Reasearch & Attachment Programme).</p>
+  
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-05-23 at 12.08.15 PM.png" alt="grp photo" class="image" />
+    <figcaption>Group Photo at the end of the 4 day journey</figcaption>
+  </section>
+  <hr class="divider" />
+  
+  <h2 class="scroll-reveal">Day 1 | Introduction</h2>
+  <section class="section active scroll-reveal">
+    <p>Us students were given a tour around the STMicroelectronics facility to familiarise ourselves with the place. We also had a brief introduction session to the company to learn more about what STMicroelectronics do.</p>
+  </section>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-05-24 at 1.03.33 AM.png" alt="grp photo" class="image" />
+    <figcaption>Photo taken during the facility tour</figcaption>
+  </section>
+  <hr class="divider" />
+
+  <h2 class="scroll-reveal">Day 2 | Job Shadowing</h2>
+  <section class="section active scroll-reveal">
+    <p>As part of the work attachment program, I was assigned to a mentor for job shadowing. I was brought to the filter and abatement section where I learnt how waste produced by the production of wafers for chips are sustainbly dealt with.</p>
+  </section>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-05-24 at 1.11.19 AM.png" 
+         alt="grp photo" 
+         class="image portrait"/>
+    <figcaption>Part of a plasma abatement system meant to filter waste product</figcaption>
+  </section>
+  <hr class="divider" />
+
+  <h2 class="scroll-reveal">Day 3 | Fab Lab Tour & Product Development</h2>
+  <section class="section active scroll-reveal">
+    <p>We were given the rare opportunity to actually enter and visit a wafer fabrication lab where I gained a deeper insight into the manufacturing of wafers for semiconductors. The entire section was very uncontaminated as small dust particles would significantly affect wafer production in the Lab.</p>
+    <p>We also had the chance to meet the product development team where they presented on how products of the company go from the drawing board all the way into the market.</p>
+  </section>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-05-24 at 1.24.26 AM.png" alt="grp photo" class="image" />
+    <figcaption>Group photo in the Fab Lab</figcaption>
+  </section>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-05-24 at 1.26.33 AM.png" alt="grp photo" class="image" />
+    <figcaption>Group photo with PD presenters</figcaption>
+  </section>
+  <hr class="divider" />
+
+  <h2 class="scroll-reveal">Day 4 | Conclusion</h2>
+  <section class="section active scroll-reveal">
+    <p>To end off things, we presented on our journey through the previous 3 days infront of the mentors and staff that had guided us through.</p>
+    <p>This experience has taught me that many of the technologies such as semiconductors found in our everyday devices are not easily made and should not be taken for granted. I also gained much insight on other sections such as what it is like to work in the semiconductor industry and sustainable ethics in company actions.</p>
+  </section>
+
+  <a href="experiences.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <script>
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

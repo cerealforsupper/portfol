@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experiences | Scouts</title>
+  <style>
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    a {
+      color: #e63946;
+      text-decoration: none;
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+
+    .image {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    h1, h2 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    p {
+      max-width: 700px;
+      margin-bottom: 1rem;
+    }
+
+    .divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #e63946, #ffffff10, #e63946);
+      margin: 3rem auto;
+      width: 80%;
+      opacity: 0.6;
+      border-radius: 2px;
+    }
+
+    /* Scroll reveal */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="experiences.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <h1 class="scroll-reveal">Scouts Leadership</h1>
+
+  <p class="scroll-reveal">
+    My scouts journey has been a long and fruitful one. From becoming an APL in Sec 2 to being promoted all the way to PA in Sec 4, I have learnt a lot. I have taken part in many Scouts activities, from guiding and teaching younger scouts how to be proper scouts, to leading activities. Fond memories include being the assistant camp chief for the 2024 Scout Unit Camp, and helping out at events like CCA trials and planning CCA activities. I also enjoyed taking part in the National Day ceremony and various West Area camps like SLC.
+  </p>
+
+  <p class="scroll-reveal">
+    I’ve gained various skills through badges and lessons, like first aid, dragon boating, and outdoor cooking. I've developed as a leader after being given the opportunity to lead a whole patrol. My Scouts journey has been one of learning, development, and responsibility. Being a Scout is not just about being a member of a CCA, but being part of a larger family that extends across nations.
+  </p>
+
+  <p class="scroll-reveal">
+    A Scout is to be trusted, loyal, friendly, disciplined, and courageous. The Scout’s Own has been a guiding presence through every step of my leadership journey to improve both my patrol and myself.
+  </p>
+
+  <img src="photos/IMG_C1C5622911B1-1.jpeg" alt="grp photo" class="image scroll-reveal" />
+  <figcaption class="scroll-reveal">Me carrying the National flag during my school's NDP ceremony</figcaption>
+
+  <hr class="divider" />
+
+  <h2 class="scroll-reveal">Assistant Patrol Leader</h2>
+  <p class="scroll-reveal">
+    My first experience with leadership in Scouts came in 2023, during Secondary 2, when I was appointed as the Assistant Patrol Leader. This marked a significant turning point, as it was the first time I was entrusted with responsibilities beyond personal tasks. I supported the Patrol Leader in organising activities, maintaining discipline, and ensuring effective communication within the patrol.
+  </p>
+
+  <img src="photos/IMG_2813.jpg" alt="Group photo" class="image scroll-reveal" />
+  <figcaption class="scroll-reveal">Group photo after the West Area Scout Leadership Camp (SLC) 2023</figcaption>
+
+  <hr class="divider" />
+
+  <h2 class="scroll-reveal">Patrol Leader</h2>
+  <p class="scroll-reveal">
+    In 2024, following the stepping down of my seniors, I was honoured to be promoted to the role of Patrol Leader. This was a significant step forward in my journey. As Patrol Leader, I took on greater responsibilities: guiding my patrol, planning and executing activities, and ensuring each member felt engaged and supported. I became the main point of contact between my patrol and the teachers, which required strong initiative and discipline.
+  </p>
+  <p class="scroll-reveal">
+    During this time, I also helped organise events such as the 3-day Unit Camp and Sec 1 tryouts.
+  </p>
+
+  <img src="photos/IMG_2814.jpg" alt="Camp briefing" class="image scroll-reveal" />
+  <figcaption class="scroll-reveal">Briefing during the SST Scout Unit Camp 2024, where I was Co-Camp Chief</figcaption>
+
+  <img src="photos/IMG_2815.jpg" alt="Camp trek" class="image scroll-reveal" />
+  <figcaption class="scroll-reveal">A trek the camp committee organised for the unit during the camp</figcaption>
+
+  <hr class="divider" />
+
+  <h2 class="scroll-reveal">Patrol Advisor</h2>
+  <p class="scroll-reveal">
+    In Secondary 4, I was once again given the opportunity to progress in my leadership journey by becoming Patrol Advisor. Although my time in this role was brief due to stepping down, it was deeply meaningful. I mentored the newly promoted patrol leaders and shared the knowledge I had gained through the years.
+  </p>
+  <p class="scroll-reveal">
+    This role allowed me to shift from direct leadership to a more supportive one, leading through influence and mentorship.
+  </p>
+
+  <hr class="divider" />
+
+  <a href="experiences.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <script>
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

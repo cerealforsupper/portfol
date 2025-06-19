@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experiences | House Rep</title>
+  <style>
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    a {
+      color: #e63946;
+      text-decoration: none;
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+
+    .image {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    h1, h2 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    p {
+      max-width: 700px;
+      margin-bottom: 1rem;
+    }
+
+    .portrait {
+      max-height: 400px;
+      width: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #e63946, #ffffff10, #e63946);
+      margin: 3rem auto;
+      width: 80%;
+      opacity: 0.6;
+      border-radius: 2px;
+    }
+
+    /* Scroll reveal animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="experiences.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <h1 class="scroll-reveal">House Representative</h1>
+
+  <p class="scroll-reveal">
+    In 2024, I was appointed as a House Representative — a role that allowed me to take on greater responsibility within my school community. I actively supported the planning and execution of various house-related activities, helping to foster team spirit and a strong sense of identity among house members.
+  </p>
+  
+  <p class="scroll-reveal">
+    One of the most significant experiences in this role was leading and guiding a group of juniors during a two-day camp and trek. I was tasked with ensuring their safety, maintaining group morale, and keeping them engaged throughout the journey.
+  </p>
+
+  <img src="photos/IMG_28952C69759A-1.jpeg" alt="Group photo during trek" class="image scroll-reveal" />
+  <figcaption class="scroll-reveal">Group photo during the trek</figcaption>
+
+  <p class="scroll-reveal">
+    This experience strengthened my leadership, communication, and problem-solving skills, while also teaching me the importance of being a dependable and encouraging mentor to younger peers.
+  </p>
+
+  <hr class="divider" />
+
+  <a href="experiences.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <script>
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

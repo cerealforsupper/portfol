@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Elec CW</title>
+  <style>
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    a {
+      color: #e63946;
+      text-decoration: none;
+      margin-top: 2rem;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .image {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    h1, h2 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    p {
+      max-width: 700px;
+      margin-bottom: 1rem;
+    }
+
+    .portrait {
+      max-height: 400px;
+      width: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #e63946, #ffffff10, #e63946);
+      margin: 3rem auto;
+      width: 80%;
+      opacity: 0.6;
+      border-radius: 2px;
+    }
+
+    /* Scroll animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <a href="projects.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <h1 class="scroll-reveal">Electronics Coursework</h1>
+  <p class="scroll-reveal">
+    My task was to design and build an electronic muscle stimulator to improve blood circulation and muscle contraction
+    by sending short electrical pulses to the body's nerves for 30 seconds. The frequency of the pulses was to be adjustable as well.
+  </p>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-06-19 at 12.13.43 PM.png" alt="Circuit diagram" class="image" />
+    <figcaption>Circuit diagram</figcaption>
+    <p>
+      The two 555 timer ICs were connected through a 6V signal from the monostable 555 timer IC’s output to the astable
+      555 timer IC’s reset, allowing the astable 555 IC to stop producing frequencies after the monostable 555 finishes the 30s cycle.
+    </p>
+  </section>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-06-19 at 12.21.41 PM.png" alt="Built circuit" class="image" />
+    <figcaption>The circuit</figcaption>
+    <p>A report was written for the project, you can find out more here:</p>
+    <a href="https://docs.google.com/document/d/17vSvKORpJoiC7QoFEmKnQmDASoB6nlUNtPbR8xuepgc/edit?usp=sharing" target="_blank">Report link</a>
+  </section>
+
+  <hr class="divider" />
+  <a href="projects.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <script>
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

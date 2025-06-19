@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experiences | Jakarta</title>
+  <style>
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    a {
+      color: #e63946;
+      text-decoration: none;
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+
+    .image {
+      width: 100%;
+      max-width: 500px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 1rem 0;
+      display: block;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    h1, h2 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 1rem;
+    }
+
+    .portrait {
+      max-height: 400px;
+      width: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .divider {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #e63946, #ffffff10, #e63946);
+      margin: 3rem auto;
+      width: 80%;
+      opacity: 0.6;
+      border-radius: 2px;
+    }
+
+    /* Scroll animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <a href="experiences.html" class="scroll-reveal">← Back to Portfolio</a>
+  <h1 class="scroll-reveal">OLE to Jakarta</h1>
+  <p class="scroll-reveal">I embarked on a 5 day overseas learning experience to Jakarta as part of a student exchange program. There I had the chance to experience what it was like to be a student in Jakarta, and also the diverse cultures found there.</p>
+  <p class="scroll-reveal">I also had a buddy who had arrived to Singapore a few weeks prior as part of the exchange program. We spent time with each other and learnt much about how different our lives are despite our close geographical proximities.</p>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-05-24 at 1.51.14 AM.png" alt="Group photo" class="image" />
+    <figcaption>Group photo before departure</figcaption>
+  </section>
+
+  <hr class="divider" />
+
+  <h2 class="scroll-reveal">School visit @ Penabur Secondary Tanjung Duren</h2>
+  <section class="section active scroll-reveal">
+    <p>Conveniently, we arrived at around the time of Indonesia's National Day, meaning I participated in their celebrations, where I learnt about the diverse cultures of the different Indonesian Islands, and also took part in some local games.</p>
+  </section>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-05-26 at 1.35.35 PM.png" alt="Game activity" class="image" />
+    <figcaption>My friend and I participating in a game</figcaption>
+  </section>
+
+  <section class="section active scroll-reveal">
+    <p>Furthermore, I took part in some of their normal lessons where I experienced what it was like learning in their school. We were there for 3 days to fully immerse ourselves in the experience.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <h2 class="scroll-reveal">Site visits</h2>
+  <section class="section active scroll-reveal">
+    <p>A tour guide brought us to many sites in Jakarta such as Taman Mini Indonesia, and the National Monument. We were taught about the rich history of many of these sites.</p>
+  </section>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-05-27 at 3.16.43 PM.png" alt="Taman Mini" class="image" />
+    <figcaption>Group photo at Taman Mini Indonesia</figcaption>
+  </section>
+
+  <hr class="divider" />
+
+  <h2 class="scroll-reveal">Further visits</h2>
+  <section class="section active scroll-reveal">
+    <p>Other places we visited included a university, Gojek, and the Indonesia International Institute for Life-Sciences (i3L), where many activities, talks, and tours were held.</p>
+  </section>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-06-19 at 10.40.11 AM.png" alt="i3L group" class="image" />
+    <figcaption>Group photo at i3L</figcaption>
+  </section>
+
+  <section class="section active scroll-reveal">
+    <img src="photos/Screenshot 2025-06-19 at 10.43.51 AM.png" alt="Gojek" class="image" />
+    <figcaption>Me presenting at Gojek</figcaption>
+  </section>
+
+  <hr class="divider" />
+
+  <h2 class="scroll-reveal">Conclusion</h2>
+  <section class="section active scroll-reveal">
+    <p>This overseas learning experience to Jakarta was truly eye-opening. It gave me a deeper appreciation for Indonesian culture, education, and daily life. Through meaningful interactions, engaging activities, and insightful site visits, I broadened my perspectives and built lasting connections. It was a memorable journey of growth, learning, and cultural exchange.</p>
+  </section>
+
+  <a href="experiences.html" class="scroll-reveal">← Back to Portfolio</a>
+
+  <script>
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

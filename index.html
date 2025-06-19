@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joen Foo | Home</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ Include model-viewer script -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section active hero">
+    <h1>Joen Foo</h1>
+    <p class="typing-line"><span id="typing"></span><span class="cursor">|</span></p>
+    
+    <div class="button-group">
+      <a href="projects.html" class="icon-button">
+        <img src="photos/bx-folder-open.svg" alt="Projects" />
+        <span>Projects</span>
+      </a>
+      <a href="achievements.html" class="icon-button">
+        <img src="photos/bx-trophy.svg" alt="Achievements" />
+        <span>Achievements</span>
+      </a>
+      <a href="experiences.html" class="icon-button">
+        <img src="photos/bx-briefcase-alt.svg" alt="Experiences" />
+        <span>Experiences</span>
+      </a>
+    </div>
+
+    <!-- ✅ 3D Model Viewer -->
+    <div class="model-section">
+      <model-viewer
+        id="randomModel"
+        src=""
+        alt="3D Model"
+        auto-rotate
+        auto-rotate-delay="0"
+        camera-controls
+        disable-zoom
+        interaction-prompt="none"
+        ar
+        shadow-intensity="1"
+        exposure="1.2"
+        style="width: 100%; height: 500px; margin-top: 10rem; margin-bottom: 0rem; position: relative; z-index: 0;"
+      >
+      </model-viewer>
+    </div>
+  </section>
+
+  <section class="model-section">
+    <div class="model-wrapper">
+      <model-viewer 
+        id="randomModel"
+        alt="3D Model" 
+        auto-rotate 
+        camera-controls 
+        interaction-prompt="when-focused"
+        ar 
+        shadow-intensity="1"
+        exposure="1.2"
+      ></model-viewer>
+      
+    
+      <div class="scroll-hint" onclick="document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' })">
+        <img src="photos/bx-user-circle.svg" alt="Down Arrow" class="scroll-icon" />
+        <span>about me</span>
+      </div>
+      <section id="about-section" class="about-section">
+        <div class="about-content">
+          <img src="photos/bx-user.svg" alt="About Icon" class="about-icon">
+          <div>
+            <h2>About Me</h2>
+            <p>
+              Hello! I'm Joen, a student from the School of Science and Technology Singapore. I am passionate in electronics and engineering. Various skills I have include designing and creating electronic systems, 3D printing, Video editing, and Arduino.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  
+  <!-- Add more content here -->
+</section>
+  <!-- ✅ Footer with social media icons -->
+  <footer class="footer">
+    <div class="socials">
+      <a href="https://www.instagram.com/cer3alforsupper/" target="_blank"><img src="photos/insta icon.png" alt="Twitter"></a>
+      <a href="https://www.linkedin.com/in/joen-foo-1a3394361/" target="_blank"><img src="photos/linked icon.png" alt="LinkedIn"></a>
+      <a href="mailto:joen_foo_xun_hao@s2022.ssts.edu.sg"><img src="photos/email icon.png" alt="Email"></a>
+    </div>    
+  </footer>
+
+  <!-- ✅ Random model loader with scale logic -->
+  <script>
+    const models = [
+      "photos/two-pin_tactile_push_button.glb",
+      "photos/arduino_breadboard_-_low_poly.glb",
+      "photos/arduino_uno_-_low_poly.glb"
+    ];
+
+    const lastModel = localStorage.getItem("lastModel");
+    const availableModels = models.filter(model => model !== lastModel);
+    const selectedModel = availableModels[Math.floor(Math.random() * availableModels.length)];
+    localStorage.setItem("lastModel", selectedModel);
+
+    const viewer = document.getElementById("randomModel");
+    viewer.setAttribute("src", selectedModel);
+
+    // ✅ Apply transform scale only for the tactile button model
+    if (selectedModel.includes("two-pin_tactile_push_button.glb")) {
+      viewer.style.transform = "scale(0.6)";
+      viewer.style.transformOrigin = "center";
+    } else {
+      viewer.style.transform = "scale(1)";
+    }
+  </script>
+
+  <!-- ✅ Typing animation -->
+  <script>
+    const typingEl = document.getElementById("typing");
+    const words = ["Electronics", "Arduino", "3D Printing", "Video Editing", "Music"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let typingForward = true;
+
+    function typeWord() {
+      const word = words[wordIndex];
+      if (typingForward) {
+        typingEl.textContent = word.slice(0, ++charIndex);
+        if (charIndex === word.length) {
+          typingForward = false;
+          setTimeout(typeWord, 1000);
+        } else {
+          setTimeout(typeWord, 100);
+        }
+      } else {
+        typingEl.textContent = word.slice(0, --charIndex);
+        if (charIndex === 0) {
+          typingForward = true;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(typeWord, 300);
+        } else {
+          setTimeout(typeWord, 50);
+        }
+      }
+    }
+    typeWord();
+  </script>
+</body>
+</html>

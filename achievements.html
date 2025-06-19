@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joen Foo | Achievements</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Scroll animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Card hover effect */
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Button styling */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background-color: #2c2c2c;
+      color: #f0f0f0;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #3a3a3a;
+      transform: translateY(-2px);
+    }
+
+    .btn-icon {
+      width: 16px;
+      height: 16px;
+      filter: invert(100%);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="achievements.html" class="active">Achievements</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section active">
+    <h2>Achievements</h2>
+    <div class="cards-container">
+      <div class="card scroll-reveal">
+        <img src="photos/Screenshot 2025-06-20 at 3.31.11 AM.jpeg" alt="spin" />
+        <h3>Frank Cooper Sands Gold</h3>
+        <p>Scout Unit Award</p>
+        <div class="tags">
+          <span class="tag">2023 & 4</span>
+          <span class="tag">Scouts</span>
+        </div>
+        <a href="award1.html" class="btn">
+          View More
+          <img src="photos/bxs-binoculars.svg" alt="binoculars" class="btn-icon" />
+        </a>
+      </div>
+
+      <div class="card scroll-reveal">
+        <img src="photos/Screenshot 2025-06-20 at 4.34.05 AM.png" alt="spin" />
+        <h3>Catch A Star Competition</h3>
+        <p>1st Place in International video category</p>
+        <div class="tags">
+          <span class="tag">2024</span>
+          <span class="tag">Astronomy</span>
+          <span class="tag">Competition</span>
+        </div>
+        <a href="award2.html" class="btn">
+          View More
+          <img src="photos/bxs-binoculars.svg" alt="binoculars" class="btn-icon" />
+        </a>
+      </div>
+
+      <div class="card scroll-reveal">
+        <img src="photos/Screenshot 2025-06-19 at 11.58.33 PM.png" alt="spin" />
+        <h3>Science Fairs & Events</h3>
+        <p>Involving the Peltier Cell research project</p>
+        <div class="tags">
+          <span class="tag">2023-4</span>
+          <span class="tag">Science Fairs</span>
+        </div>
+        <a href="award3.html" class="btn">
+          View More
+          <img src="photos/bxs-binoculars.svg" alt="binoculars" class="btn-icon" />
+        </a>
+      </div>
+
+      
+
+  <script>
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
